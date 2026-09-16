@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlltagsKI Publish – Datenschutzerklärung / Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f7f9fc; --card: #fff; --text: #1a1f2e; --muted: #5a6577;
+      --accent: #e85d04; --border: #e3e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .top {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.25rem;
+    }
+    .top-inner {
+      max-width: 42rem; margin: 0 auto; display: flex; flex-wrap: wrap;
+      gap: 0.75rem 1.25rem; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 700; color: var(--text); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.95rem; }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 1.75rem 1.25rem 3rem; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.35rem 1.4rem;
+    }
+    h1 { margin: 0 0 0.5rem; font-size: 1.6rem; line-height: 1.25; }
+    h2 { margin: 1.4rem 0 0.45rem; font-size: 1.1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    ul { padding-left: 1.2rem; }
+    .lang-block { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="top-inner">
+      <a class="brand" href="index.html">AlltagsKI <span>Publish</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <article class="card">
+      <h1>Datenschutzerklärung</h1>
+      <p class="meta"><strong>Stand:</strong> 17.09.2026 · Produkt: AlltagsKI Publish</p>
+
+      <p>
+        Diese Erklärung gilt für <strong>AlltagsKI Publish</strong> – eine Creator-Publish-Oberfläche,
+        mit der Nutzer eigene Videos über die offizielle <strong>TikTok Login Kit</strong>- und
+        <strong>Content Posting API</strong> (<code>video.publish</code>) zu TikTok hochladen können
+        (optional auch YouTube).
+      </p>
+
+      <h2>1. Verantwortlicher / Kontakt</h2>
+      <p>
+        Torben B.<br />
+        E-Mail: <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a>
+      </p>
+
+      <h2>2. TikTok OAuth &amp; video.publish</h2>
+      <ul>
+        <li>Anmeldung erfolgt ausschließlich über den offiziellen TikTok-OAuth-Dialog (Login Kit).</li>
+        <li>Scopes umfassen u. a. die für Direct Post benötigten Rechte, insbesondere Content Posting / <code>video.publish</code>.</li>
+        <li>Es werden <strong>keine</strong> TikTok-Passwörter erhoben oder gespeichert.</li>
+      </ul>
+
+      <h2>3. Welche Daten verarbeitet werden</h2>
+      <ul>
+        <li><strong>OAuth-Tokens:</strong> Access- und Refresh-Tokens werden <strong>nur serverseitig</strong> gespeichert (nicht im Browser / LocalStorage des Clients), um Uploads im Auftrag des angemeldeten Creators auszuführen.</li>
+        <li><strong>Creator-Metadaten:</strong> Nickname, Username, Avatar-URL und Privacy-Optionen, die TikTok über <code>creator_info/query</code> liefert.</li>
+        <li><strong>Inhalte:</strong> vom Nutzer gewählte Videos, Titel/Captions, Privacy-Stufe, Interaktions- und Commercial-Toggles.</li>
+        <li><strong>Technische Logs:</strong> Zeitstempel und Status von Uploads/Fehlern zur Fehlerbehebung.</li>
+      </ul>
+
+      <h2>4. Zweck</h2>
+      <p>
+        Ausschließlich: Anmeldung, Vorschau und Veröffentlichung eigener Inhalte des Creators
+        auf TikTok (Direct Post) sowie optionale Performance-Auswertung für denselben Account.
+      </p>
+
+      <h2>5. Weitergabe / Verkauf</h2>
+      <p>
+        Daten werden an TikTok (und ggf. Google/YouTube) nur übermittelt, soweit für OAuth,
+        Upload oder Analytics nötig. <strong>Wir verkaufen keine personenbezogenen Daten</strong>
+        und geben sie nicht an Werbenetzwerke weiter.
+      </p>
+
+      <h2>6. Speicherdauer</h2>
+      <p>
+        Tokens und Logs bleiben gespeichert, solange die Integration aktiv ist.
+        Löschung auf Anfrage an <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a>
+        bzw. durch Widerruf der OAuth-Freigabe in den TikTok-Einstellungen.
+      </p>
+
+      <h2>7. Rechte</h2>
+      <p>
+        Auskunft, Berichtigung, Löschung und Widerruf der Einwilligung (OAuth widerrufen).
+        Zusätzlich gelten die Datenschutzhinweise von TikTok (und ggf. Google/YouTube).
+      </p>
+
+      <h2>8. Hosting dieser Seite</h2>
+      <p>
+        Diese statische Seite (GitHub Pages) dient App-Metadaten / Developer-Portal-Angaben
+        und speichert selbst keine Formulareingaben.
+      </p>
+
+      <div class="lang-block">
+        <h1>Privacy Policy (English)</h1>
+        <p class="meta"><strong>Effective:</strong> 17 Sep 2026 · Product: AlltagsKI Publish</p>
+        <p>
+          This policy covers <strong>AlltagsKI Publish</strong>, a creator publish UI that posts
+          the user’s own videos to TikTok via the official <strong>TikTok Login Kit</strong> and
+          <strong>Content Posting API</strong> (<code>video.publish</code>).
+        </p>
+        <h2>Controller / contact</h2>
+        <p>Torben B. · <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a></p>
+        <h2>TikTok OAuth &amp; video.publish</h2>
+        <p>
+          Sign-in uses TikTok’s official OAuth dialog only. Tokens required for Direct Post
+          (including <code>video.publish</code>) are stored <strong>server-side only</strong>,
+          never in the browser. We do not collect TikTok passwords.
+        </p>
+        <h2>Data we process</h2>
+        <ul>
+          <li>OAuth access/refresh tokens (server-side)</li>
+          <li>Creator metadata from TikTok (<code>creator_info/query</code>)</li>
+          <li>Videos, captions, privacy and disclosure choices you submit</li>
+          <li>Technical upload/error logs</li>
+        </ul>
+        <h2>No selling of data</h2>
+        <p>
+          We do <strong>not sell</strong> personal data. Data is shared with TikTok (and optionally
+          YouTube/Google) only as needed for OAuth, posting, or analytics you request.
+        </p>
+        <h2>Retention &amp; rights</h2>
+        <p>
+          Tokens/logs are kept while the integration is active; request deletion via
+          <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a> or revoke OAuth in TikTok.
+          You may request access, correction, or deletion as applicable under law.
+        </p>
+      </div>
+
+      <p style="margin-top:1.5rem"><a href="terms.html">Terms of Service / Nutzungsbedingungen</a> · <a href="index.html">Home</a></p>
+    </article>
+  </main>
+</body>
+</html>

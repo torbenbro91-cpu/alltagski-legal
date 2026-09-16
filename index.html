@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlltagsKI Publish – Creator Posting for TikTok</title>
+  <meta name="description" content="AlltagsKI Publish: preview, privacy choice, commercial disclosure, and Direct Post to TikTok. Creator tool with TikTok Login Kit &amp; Content Posting API." />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1a1f2e;
+      --muted: #5a6577;
+      --accent: #e85d04;
+      --accent-soft: #fff4ec;
+      --border: #e3e8f0;
+      --ok: #0d9488;
+      --shadow: 0 8px 28px rgba(26, 31, 46, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .top {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.25rem;
+    }
+    .top-inner {
+      max-width: 52rem;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.95rem; }
+    .nav-links a { text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { text-decoration: underline; }
+    .hero {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 1.5rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.6rem, 4vw, 2.15rem);
+      line-height: 1.2;
+    }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 40rem; margin: 0 0 1.5rem; }
+    .lang-toggle {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .lang-toggle button {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 0.35rem 0.7rem;
+      font: inherit;
+      cursor: pointer;
+    }
+    .lang-toggle button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 600;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover { filter: brightness(1.05); }
+    .cta-note { color: var(--muted); font-size: 0.9rem; }
+    .grid {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 2.5rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 700px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .features { grid-column: 1 / -1; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      box-shadow: var(--shadow);
+    }
+    .card h2 { margin: 0 0 0.65rem; font-size: 1.15rem; }
+    .features ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+    @media (min-width: 700px) {
+      .features ul { grid-template-columns: 1fr 1fr; }
+    }
+    .features li {
+      padding-left: 1.6rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--ok);
+      font-weight: 700;
+    }
+    .legal-box p { margin: 0.35rem 0; }
+    .legal-box a { font-weight: 600; }
+    footer {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    [data-lang="en"] { display: none; }
+    html[lang="en"] [data-lang="de"] { display: none; }
+    html[lang="en"] [data-lang="en"] { display: block; }
+    html[lang="en"] span[data-lang="en"],
+    html[lang="en"] a[data-lang="en"] { display: inline; }
+    html[lang="de"] span[data-lang="en"],
+    html[lang="de"] a[data-lang="en"] { display: none; }
+    html[lang="en"] span[data-lang="de"],
+    html[lang="en"] a[data-lang="de"] { display: none; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="top-inner">
+      <a class="brand" href="index.html">AlltagsKI <span>Publish</span></a>
+      <nav class="nav-links" aria-label="Legal">
+        <a href="privacy.html">Privacy / Datenschutz</a>
+        <a href="terms.html">Terms / Nutzungsbedingungen</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" id="btn-de" class="active" onclick="setLang('de')">Deutsch</button>
+      <button type="button" id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+
+    <div data-lang="de">
+      <div class="badge">Creator-Tool · TikTok Direct Post</div>
+      <h1>AlltagsKI Publish</h1>
+      <p class="lead">
+        Eine klare Publish-Oberfläche für Creator: Video-Vorschau, Privatsphäre wählen,
+        kommerzielle Kennzeichnung, Zustimmung – und erst dann Direct Post zu TikTok
+        über die offizielle Content Posting API (Login Kit).
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#cta">Publish UI öffnen</a>
+        <span class="cta-note">Aktuell lokal / Desktop (http://127.0.0.1:8787)</span>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <div class="badge">Creator tool · TikTok Direct Post</div>
+      <h1>AlltagsKI Publish</h1>
+      <p class="lead">
+        A clean publish surface for creators: video preview, privacy choice,
+        commercial disclosure, consent — then Direct Post to TikTok via the official
+        Content Posting API (Login Kit).
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#cta">Open Publish UI</a>
+        <span class="cta-note">Local / desktop for now (http://127.0.0.1:8787)</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card features">
+      <h2 data-lang="de">Was Creator bekommen</h2>
+      <h2 data-lang="en">What creators get</h2>
+      <ul data-lang="de">
+        <li>Creator-Info laden (Nickname, erlaubte Privacy-Stufen)</li>
+        <li>Video wählen + HTML5-Vorschau vor dem Post</li>
+        <li>Privatsphäre: keine Vorauswahl – manuell wählen</li>
+        <li>Kommentare / Duett / Stitch (Standard aus)</li>
+        <li>Kommerzielle Inhalte: Standard aus; Your Brand / Branded Content</li>
+        <li>Zustimmung zu Music Usage / Branded Content Policy</li>
+        <li>Upload erst nach Klick auf „Veröffentlichen“</li>
+        <li>Status-Poll bis PUBLISH_COMPLETE</li>
+        <li>OAuth-Token nur serverseitig – nie im Browser</li>
+        <li>Mehrere Creator möglich (je Account eigene OAuth-Session)</li>
+      </ul>
+      <ul data-lang="en">
+        <li>Load creator info (nickname, allowed privacy levels)</li>
+        <li>Pick video + HTML5 preview before posting</li>
+        <li>Privacy: no default — creator must choose</li>
+        <li>Comments / Duet / Stitch (off by default)</li>
+        <li>Commercial content: off by default; Your Brand / Branded Content</li>
+        <li>Consent for Music Usage / Branded Content Policy</li>
+        <li>Upload starts only after explicit Publish click</li>
+        <li>Status polling until PUBLISH_COMPLETE</li>
+        <li>OAuth tokens stored server-side only — never in the browser</li>
+        <li>Multi-creator capable (each account has its own OAuth session)</li>
+      </ul>
+    </section>
+
+    <section class="card" id="cta">
+      <h2 data-lang="de">Publish UI öffnen</h2>
+      <h2 data-lang="en">Open Publish UI</h2>
+      <p data-lang="de">
+        Die Publish-Oberfläche läuft vorerst als lokale Desktop-App
+        (<code>http://127.0.0.1:8787</code>). Starte sie auf dem Rechner mit dem
+        AlltagsKI-Publish-Stack, melde dich per TikTok Login Kit an und poste.
+      </p>
+      <p data-lang="en">
+        The Publish UI currently runs as a local desktop app
+        (<code>http://127.0.0.1:8787</code>). Start it on the machine with the
+        AlltagsKI Publish stack, sign in via TikTok Login Kit, then post.
+      </p>
+      <p class="cta-note" style="margin-top:0.75rem" data-lang="de">
+        Öffentliche Cloud-URL folgt nach Audit; Legal-Seiten bleiben hier auf GitHub Pages.
+      </p>
+      <p class="cta-note" style="margin-top:0.75rem" data-lang="en">
+        Public cloud URL comes after audit; legal pages stay on GitHub Pages.
+      </p>
+    </section>
+
+    <section class="card legal-box">
+      <h2 data-lang="de">Rechtliches (direkt sichtbar)</h2>
+      <h2 data-lang="en">Legal (always visible)</h2>
+      <p><a href="privacy.html">Datenschutzerklärung / Privacy Policy</a></p>
+      <p><a href="terms.html">Nutzungsbedingungen / Terms of Service</a></p>
+      <p data-lang="de" style="color:var(--muted);font-size:0.9rem;margin-top:0.75rem">
+        Kontakt: <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a>
+      </p>
+      <p data-lang="en" style="color:var(--muted);font-size:0.9rem;margin-top:0.75rem">
+        Contact: <a href="mailto:torbenbro91@gmail.com">torbenbro91@gmail.com</a>
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p data-lang="de">
+      Stand: 17.09.2026 · Betreiber: Torben B. · Produkt: AlltagsKI Publish ·
+      TikTok app_id für Audit hinterlegt im Developer Portal.
+    </p>
+    <p data-lang="en">
+      Updated: 17 Sep 2026 · Operator: Torben B. · Product: AlltagsKI Publish ·
+      TikTok app_id registered in the Developer Portal for audit.
+    </p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById("btn-de").classList.toggle("active", lang === "de");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      try { localStorage.setItem("alltagski_lang", lang); } catch (e) {}
+    }
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("alltagski_lang"); } catch (e) {}
+      if (saved === "en" || saved === "de") setLang(saved);
+      else if ((navigator.language || "").toLowerCase().startsWith("en")) setLang("en");
+      else setLang("de");
+    })();
+  </script>
+</body>
+</html>
